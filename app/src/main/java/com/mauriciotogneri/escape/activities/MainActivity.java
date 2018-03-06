@@ -6,11 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.LinearLayout.LayoutParams;
 
 import com.mauriciotogneri.androidutils.Screen;
 import com.mauriciotogneri.androidutils.Screen.ScreenSize;
@@ -18,8 +17,8 @@ import com.mauriciotogneri.escape.R;
 
 public class MainActivity extends AppCompatActivity
 {
-    private static final int TILES_WIDTH = 24;
-    private static final int TILES_HEIGHT = 14;
+    private static final int TILES_WIDTH = 23;
+    private static final int TILES_HEIGHT = 13;
 
     public void onCreate(Bundle savedInstanceState)
     {
@@ -41,16 +40,18 @@ public class MainActivity extends AppCompatActivity
         int tileWidth = size.width() / TILES_WIDTH;
         int tileSizePx = Math.min(tileHeight, tileWidth);
 
-        ViewGroup root = findViewById(R.id.container);
+        LinearLayout root = findViewById(R.id.container);
         LayoutInflater inflater = getLayoutInflater();
 
         for (int i = 0; i < TILES_HEIGHT; i++)
         {
             LinearLayout row = new LinearLayout(this);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            row.setLayoutParams(params);
 
             for (int j = 0; j < TILES_WIDTH; j++)
             {
-                TextView tile = (TextView) inflater.inflate(R.layout.tile, row, false);
+                View tile = inflater.inflate(R.layout.tile, row, false);
                 tile.getLayoutParams().width = tileSizePx;
                 tile.getLayoutParams().height = tileSizePx;
 

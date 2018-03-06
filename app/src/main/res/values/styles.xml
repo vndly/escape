@@ -10,10 +10,9 @@
     </style>
 
     <style name="tile">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/tile.wall</item>
-        <item name="android:layout_margin">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/tile.floor</item>
     </style>
 
 </resources>
