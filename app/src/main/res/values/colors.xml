@@ -5,4 +5,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#3949AB</color>
 
+    <color name="tile.floor">#999999</color>
+    <color name="tile.wall">#444444</color>
+
 </resources>
